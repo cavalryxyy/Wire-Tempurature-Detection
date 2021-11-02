@@ -91,7 +91,7 @@ def loc_mp(arr):
     for r in (_rows):
         r_max.append(np.max(arr[:,r]))
     
-    r_max = [a for a in r_max if r_max == 0]
+    r_max = list(map(lambda x: x if x!=0 else np.inf, r_max))
     
     xm_pos = np.where(r_max == np.min(np.array(r_max)))
     t_min  = np.min(np.array(r_max)) 
@@ -99,7 +99,7 @@ def loc_mp(arr):
     return r_max, xm_pos, t_min
 
 
-path = 'C:/Users/Administrator/Desktop/WireTemp/'
+path = '/Users/xuyuanyuan/Desktop/WireTemp/'
 df = pd.read_csv(path + 'FLIR_A615.csv', header = None)
 res = extract_wire(df)
 wire, region, wire_num = global_filter_small(res, threshold = 640)
