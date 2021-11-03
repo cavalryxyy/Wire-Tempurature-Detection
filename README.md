@@ -11,4 +11,4 @@ Hence, the workflow of this project can be descirbed as following steps:
 2) Extract the tempurature data from each wire sub-image. 
 3) Find the minial tempurature location of each wire.  (Research motivation)
 
-2021/11/02
+2021/11/03
