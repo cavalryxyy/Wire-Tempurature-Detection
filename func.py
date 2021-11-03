@@ -40,7 +40,7 @@ class Compute:
         Bbox = [prop.bbox for prop in props]
 
         # Find objects > threshold, get their labels, set them to 0-clear.
-        fal_points = [t[0] for t in filter(lambda a: a[1] < threshold, enumerate(Area, 1))]
+        fal_points = [x[0] for x in filter(lambda area: area[1] < threshold, enumerate(Area, 1))]
         # delete small parts in temp 
         for label in fal_points:
             temp[labels == label] = 0
